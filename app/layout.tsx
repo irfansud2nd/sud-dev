@@ -14,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="font-poppins">{children}</body>
+      <body className="font-poppins text-gray-800 bg-gray-50">{children}</body>
     </html>
   );
 }
