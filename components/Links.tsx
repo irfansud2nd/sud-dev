@@ -2,10 +2,21 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import NavMenu from "./NavMenu";
 
 const Links = () => {
+  const [showMenu, setShowMenu] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const sections = useRef<any>([]);
+
+  useEffect(() => {
+    sections.current = document.querySelectorAll("[data-section]");
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const handleScroll = () => {
     const pageYOffset = window.scrollY;
@@ -27,48 +38,47 @@ const Links = () => {
     }
   };
 
-  useEffect(() => {
-    sections.current = document.querySelectorAll("[data-section]");
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
   return (
-    <div className="hidden md:flex items-baseline gap-2">
-      <Link
-        href="/#home"
-        className={`${
-          activeSection === "home" ? "border-b-black" : "border-b-transparent "
-        } border-b-4  hover:border-b-gray-300 transition-all duration-75`}
-      >
-        Home
-      </Link>
-      <Link
-        href="/#about"
-        className={`${
-          activeSection === "about" ? "border-b-black" : "border-b-transparent "
-        } border-b-4  hover:border-b-gray-300 transition-all duration-75`}
-      >
-        About
-      </Link>
-      <Link
-        href="/#projects"
-        className={`${
-          activeSection === "projects"
-            ? "border-b-black"
-            : "border-b-transparent "
-        } border-b-4  hover:border-b-gray-300 transition-all duration-75`}
-      >
-        Projects
-      </Link>
-      <Link
-        href="/#contact"
-        className="bg-gray-500 px-2 py-1 rounded-lg text-gray-50"
-      >
-        Hire me!
-      </Link>
+    <div>
+      <div className="hidden md:flex items-baseline gap-2">
+        <Link
+          href="/#home"
+          className={`${
+            activeSection === "home"
+              ? "border-b-black"
+              : "border-b-transparent "
+          } border-b-4  hover:border-b-gray-300 transition-all duration-75`}
+        >
+          Home
+        </Link>
+        <Link
+          href="/#about"
+          className={`${
+            activeSection === "about"
+              ? "border-b-black"
+              : "border-b-transparent "
+          } border-b-4  hover:border-b-gray-300 transition-all duration-75`}
+        >
+          About
+        </Link>
+        <Link
+          href="/#projects"
+          className={`${
+            activeSection === "projects"
+              ? "border-b-black"
+              : "border-b-transparent "
+          } border-b-4  hover:border-b-gray-300 transition-all duration-75`}
+        >
+          Projects
+        </Link>
+        <Link
+          href="/#contact"
+          className="bg-gray-500 px-2 py-1 rounded-lg text-gray-50"
+        >
+          Hire me!
+        </Link>
+      </div>
+      <NavMenu showMenu={showMenu} setShowMenu={setShowMenu} />
     </div>
   );
 };

@@ -1,7 +1,78 @@
+import ProjectCard from "./ProjectCard";
+
 const Projects = () => {
   return (
-    <section id="projects" className="h-screen" data-section>
-      Projects
+    <section
+      id="projects"
+      className="min-h-screen w-full flex flex-col py-5 md:py-10 scroll-mt-10"
+      data-section
+    >
+      <h1 className="text-4xl font-bold text-center mb-3">My Projects</h1>
+      <div className="flex flex-1 flex-wrap justify-center items-center gap-3 ">
+        <ProjectCard
+          heading="Custom Kit"
+          desc={
+            <span>
+              Custom Kit is an innovation that provides a retro or customized
+              appearance for your motorcycle without the need to modify its
+              chassis. This way, you can easily restore your motorcycle to its
+              original form. The design is inspired by{" "}
+              <a href="https://eat-curious.com" className="text-blue-500">
+                eat-curious.com
+              </a>
+              , and the image assets are from{" "}
+              <a
+                href="https://instagram.com/custom.kit"
+                className="text-blue-500"
+              >
+                Custom Kit by Katros
+              </a>
+              .
+            </span>
+          }
+          imgSrc="/previews/custom-kit-preview.webm"
+          techStack={["react", "tailwind"]}
+          visitUrl="https://irfansud2nd.github.io/custom-kit"
+          repoUrl="https://github.com/irfansud2nd/custom-kit"
+        />
+        <ProjectCard
+          heading="Sud Gym"
+          desc={
+            <span>
+              Sudgym is a website that provides information about body exercises
+              based on muscle targets or equipment. I followed a tutorial from{" "}
+              <a
+                href="https://www.youtube.com/@javascriptmastery"
+                className="text-blue-500"
+              >
+                Javascript Mastery
+              </a>
+              , but I used a different tech stack, which is Typescript and
+              Tailwind.
+            </span>
+          }
+          imgSrc="/previews/sud-gym-preview.webm"
+          techStack={["react", "tailwind", "api"]}
+          visitUrl="https://sudgym.netlify.app/"
+          repoUrl="https://github.com/irfansud2nd/sudgym"
+        />
+        <ProjectCard
+          heading="Sud Garage"
+          desc="Sudgarage is a simple landing page with the most basic tech stack that showcases the services offered."
+          imgSrc="/previews/sud-garage-preview.webm"
+          techStack={["html", "css", "js"]}
+          visitUrl="hhttps://irfansud2nd.github.io/sud-garage"
+          repoUrl="https://github.com/irfansud2nd/sud-garage"
+        />
+        <ProjectCard
+          heading="Guess 4 numbers"
+          desc="Guess 4 Numbers is a game I created when I first started learning JavaScript. It may not be a dazzling project, but it holds sentimental value for me."
+          imgSrc="/previews/4-numbers-preview.webm"
+          techStack={["html", "css", "js"]}
+          visitUrl="https://irfansud2nd.github.io/guess-the-4-numbers/"
+          repoUrl="https://github.com/irfansud2nd/guess-the-4-numbers"
+        />
+      </div>
     </section>
   );
 };

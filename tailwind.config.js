@@ -15,9 +15,21 @@ module.exports = {
           "0%": { transform: "translate3d(0, 0, 0)" },
           "100%": { transform: "translate3d(-50%, 0, 0)" },
         },
+        navMenuBgShow: {
+          "0%": { display: "none", opacity: "0" },
+          "50%": { display: "block", position: "absolute", opacity: "40%" },
+          "100%": { display: "block", position: "absolute", opacity: "40%" },
+        },
+        navMenuShow: {
+          "0%": { display: "none", transform: "translateX(100%)" },
+          "50%": { display: "block", transform: "translateX(100%)" },
+          "100%": { display: "block", transform: "translateX(0%)" },
+        },
       },
       animation: {
         runningImage: "runningElement 10s linear infinite",
+        navMenuShow: "navMenuShow 1.5s linear forwards",
+        navMenuBgShow: "navMenuBgShow 1.5s linear forwards",
       },
     },
   },

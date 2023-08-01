@@ -9,13 +9,13 @@ const Home = () => {
   return (
     <section
       id="home"
-      className="w-full max-w-[1440px] min-[1440px]:mx-auto min-h-screen flex justify-center text-center md:text-start md:justify-between gap-3 md:gap-10 items-center px-5 lg:px-40"
+      className="w-full max-w-[1440px] min-[1440px]:mx-auto min-h-screen flex text-center md:text-start md:justify-between md:gap-10 justify-center items-center px-5 lg:px-40 "
       data-section
     >
-      <div className="flex-1 flex flex-col gap-5">
+      <div className="flex-1 flex flex-col md:gap-5">
         <h1 className="font-extrabold text-5xl">Frontend Developer</h1>
         <Image
-          className="md:hidden object-cover object-top rounded-full w-52 h-52 mx-auto"
+          className="md:hidden object-cover object-top rounded-full w-52 h-52 mx-auto my-3"
           src="/images/profile.jpg"
           alt="Profile Picture"
           width={150}
@@ -23,7 +23,7 @@ const Home = () => {
           quality={100}
         />
         <p>
-          Hi, I am Irfan sudarsana. A self-taught Frontend Developer.
+          Hi, I am Irfan Sudarsana, a self-taught Frontend Developer.
           <br className="mb-1" />
           <span className="inline-block mr-2">
             <FaLocationDot />
@@ -42,7 +42,7 @@ const Home = () => {
       </div>
       <Image
         className="hidden md:block object-cover object-top rounded-full w-[300px] h-[300px] md:w-[230px] md:h-[230px] xl:w-[300px] xl:h-[300px]"
-        src="/images/profile-sud.jpg"
+        src="/images/profile.jpg"
         alt="Profile Picture"
         width={300}
         height={300}
