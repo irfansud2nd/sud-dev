@@ -13,6 +13,10 @@ const MessageSchema = new Schema({
     type: String,
     required: [true, "Message is required."],
   },
+  sentAt: {
+    type: String,
+    required: [true, "Time is required"],
+  },
 });
 
 const Message = models.Message || model("Message", MessageSchema);

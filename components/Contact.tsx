@@ -1,6 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import axios from "axios";
+import { useRef, useState } from "react";
+import { ToastContainer, toast, Id } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Contact = () => {
   const [submitting, setSubmitting] = useState(false);
@@ -10,35 +13,45 @@ const Contact = () => {
     text: "",
   });
 
-  const messageStat = (text: string) => {
-    console.log(text);
-  };
-
   const sendMessage = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSubmitting(true);
-    try {
-      const res = await fetch("api/send-message", {
-        method: "POST",
-        body: JSON.stringify({
-          senderName: message.senderName,
-          senderEmail: message.senderEmail,
-          message: message.text,
-        }),
+    const toastId = toast.loading("Sending your message", {
+      position: toast.POSITION.BOTTOM_LEFT,
+    });
+    const currentTime = new Date();
+    axios
+      .post("api/send-message", {
+        senderName: message.senderName,
+        senderEmail: message.senderEmail,
+        message: message.text,
+        sentAt: currentTime.toDateString(),
+      })
+      .then((res) =>
+        toast.update(toastId, {
+          render: "Message successfully sent",
+          type: "success",
+          isLoading: false,
+          autoClose: 3000,
+        })
+      )
+      .catch((error) => {
+        console.log(error);
+        toast.update(toastId, {
+          render: "Failed to send message, please email me directly",
+          type: "error",
+          isLoading: false,
+          autoClose: 3000,
+        });
+      })
+      .finally(() => {
+        setMessage({
+          senderName: "",
+          senderEmail: "",
+          text: "",
+        });
+        setSubmitting(false);
       });
-      if (res.ok) {
-        messageStat("message sent");
-      }
-    } catch (error: any) {
-      messageStat(error.message);
-    } finally {
-      setSubmitting(false);
-      setMessage({
-        senderName: "",
-        senderEmail: "",
-        text: "",
-      });
-    }
   };
 
   return (
@@ -82,7 +95,7 @@ const Contact = () => {
           />
         </div>
         <div className="flex flex-col w-full gap-0.5">
-          <label className="font-semibold">Email</label>
+          <label className="font-semibold">Message</label>
           <textarea
             className="border-2 border-gray-400 focus:outline-none px-2"
             value={message.text}
@@ -100,6 +113,7 @@ const Contact = () => {
           {submitting ? "Send..." : "Send"}
         </button>
       </form>
+      <ToastContainer />
     </div>
   );
 };

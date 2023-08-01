@@ -2,7 +2,7 @@ import Message from "@/models/message";
 import { connectToDB } from "@/utils/database";
 
 export const POST = async (req: any) => {
-  const { senderName, senderEmail, message } = await req.json();
+  const { senderName, senderEmail, message, sentAt } = await req.json();
 
   try {
     await connectToDB();
@@ -10,6 +10,7 @@ export const POST = async (req: any) => {
       senderName,
       senderEmail,
       message,
+      sentAt,
     });
     await newMessage.save();
     return new Response(JSON.stringify(newMessage), { status: 201 });
