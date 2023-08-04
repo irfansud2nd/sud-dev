@@ -11,6 +11,7 @@ export const POST = async (req: any) => {
       senderEmail,
       message,
       sentAt,
+      replied: false,
     });
     await newMessage.save();
     return new Response(JSON.stringify(newMessage), { status: 201 });

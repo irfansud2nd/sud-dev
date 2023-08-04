@@ -61,12 +61,12 @@ const Projects = () => {
           desc="Sudgarage is a simple landing page with the most basic tech stack that showcases the services offered."
           imgSrc="/previews/sud-garage-preview.webm"
           techStack={["html", "css", "js"]}
-          visitUrl="hhttps://irfansud2nd.github.io/sud-garage"
+          visitUrl="https://irfansud2nd.github.io/sud-garage"
           repoUrl="https://github.com/irfansud2nd/sud-garage"
         />
         <ProjectCard
           heading="Guess 4 numbers"
-          desc="Guess 4 Numbers is a game I created when I first started learning JavaScript. It may not be a dazzling project, but it holds sentimental value for me."
+          desc="Guess 4 Numbers is a game I created when I first started learning JavaScript. It may not be a flashy project, but it holds sentimental value for me , it is also the first page that I have deployed. The essence of the game is to guess 4 numbers, and the clues provided include correct numbers and their positions."
           imgSrc="/previews/4-numbers-preview.webm"
           techStack={["html", "css", "js"]}
           visitUrl="https://irfansud2nd.github.io/guess-the-4-numbers/"

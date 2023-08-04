@@ -17,6 +17,10 @@ const MessageSchema = new Schema({
     type: String,
     required: [true, "Time is required"],
   },
+  replied: {
+    type: Boolean,
+    required: [true, "Replied is required"],
+  },
 });
 
 const Message = models.Message || model("Message", MessageSchema);
