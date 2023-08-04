@@ -27,7 +27,7 @@ const Links = () => {
       const sectionHeight = section.offsetHeight;
 
       if (
-        pageYOffset >= sectionOffsetTop &&
+        pageYOffset >= sectionOffsetTop - sectionHeight / 5 &&
         pageYOffset < sectionOffsetTop + sectionHeight / 3
       ) {
         newActiveSection = section.id;
