@@ -37,14 +37,14 @@ const About = () => {
           </p>
           <div className="flex flex-wrap gap-1 mt-2">
             <Link
-              href="/"
+              href="https://drive.google.com/drive/folders/1SDu6Cju5EmaDH2-3PVTREhr3aPhDUDOT?usp=sharing"
               target="_blank"
               className="font-bold whitespace-nowrap items-center px-2 pt-1 pb-0.5 bg-gray-50 rounded-full"
             >
               <IoIosDocument className="text-lg inline-block mb-1" /> CV
             </Link>
             <Link
-              href="/"
+              href="https://www.freecodecamp.org/certification/fcc9ff89252-49db-4f88-b62c-99edbc088d36/responsive-web-design"
               target="_blank"
               className="font-bold whitespace-nowrap items-center px-2 pt-1 pb-0.5 bg-gray-50 rounded-full"
             >
@@ -52,11 +52,11 @@ const About = () => {
               Web Design
             </Link>
             <Link
-              href="/"
+              href="https://www.freecodecamp.org/certification/fcc9ff89252-49db-4f88-b62c-99edbc088d36/front-end-development-libraries"
               target="_blank"
               className="font-bold whitespace-nowrap items-center px-2 pt-1 pb-0.5 bg-gray-50 rounded-full"
             >
-              <PiCertificateFill className="text-lg inline-block" /> Javasript
+              <PiCertificateFill className="text-lg inline-block" /> Frontend
               Development Libraries
             </Link>
           </div>
