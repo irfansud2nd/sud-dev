@@ -30,7 +30,8 @@ const Projects = () => {
               .
             </span>
           }
-          imgSrc="/previews/custom-kit-preview.webm"
+          webm="/previews/custom-kit-preview.webm"
+          mp4="/previews/custom-kit-preview.mp4"
           techStack={["react", "tailwind"]}
           visitUrl="https://irfansud2nd.github.io/custom-kit"
           repoUrl="https://github.com/irfansud2nd/custom-kit"
@@ -51,7 +52,8 @@ const Projects = () => {
               Tailwind.
             </span>
           }
-          imgSrc="/previews/sud-gym-preview.webm"
+          webm="/previews/sud-gym-preview.webm"
+          mp4="/previews/sud-gym-preview.mp4"
           techStack={["react", "tailwind", "api"]}
           visitUrl="https://sudgym.netlify.app/"
           repoUrl="https://github.com/irfansud2nd/sudgym"
@@ -59,7 +61,8 @@ const Projects = () => {
         <ProjectCard
           heading="Sud Garage"
           desc="Sudgarage is a simple landing page with the most basic tech stack that showcases the services offered."
-          imgSrc="/previews/sud-garage-preview.webm"
+          webm="/previews/sud-garage-preview.webm"
+          mp4="/previews/sud-garage-preview.mp4"
           techStack={["html", "css", "js"]}
           visitUrl="https://irfansud2nd.github.io/sud-garage"
           repoUrl="https://github.com/irfansud2nd/sud-garage"
@@ -67,7 +70,8 @@ const Projects = () => {
         <ProjectCard
           heading="Guess 4 numbers"
           desc="Guess 4 Numbers is a game I created when I first started learning JavaScript. It may not be a flashy project, but it holds sentimental value for me , it is also the first page that I have deployed. The essence of the game is to guess 4 numbers, and the clues provided include correct numbers and their positions."
-          imgSrc="/previews/4-numbers-preview.webm"
+          webm="/previews/4-numbers-preview.webm"
+          mp4="/previews/4-numbers-preview.mp4"
           techStack={["html", "css", "js"]}
           visitUrl="https://irfansud2nd.github.io/guess-the-4-numbers/"
           repoUrl="https://github.com/irfansud2nd/guess-the-4-numbers"

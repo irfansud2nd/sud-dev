@@ -13,7 +13,8 @@ import { AiFillHtml5 } from "react-icons/ai";
 type ProjectCardProps = {
   heading: string;
   desc: string | JSX.Element;
-  imgSrc: string;
+  webm: string;
+  mp4: string;
   techStack: string[];
   visitUrl: string;
   repoUrl: string;
@@ -22,7 +23,8 @@ type ProjectCardProps = {
 const ProjectCard = ({
   heading,
   desc,
-  imgSrc,
+  webm,
+  mp4,
   techStack,
   visitUrl,
   repoUrl,
@@ -68,7 +70,10 @@ const ProjectCard = ({
       <h1 className="whitespace-nowrap font-extrabold text-3xl border-b-2 border-b-slate-500 text-center">
         {heading}
       </h1>
-      <video autoPlay loop muted playsInline src={imgSrc}></video>
+      <video autoPlay loop muted playsInline>
+        <source src={webm} />
+        <source src={mp4} />
+      </video>
       <p className="flex-1">{desc}</p>
       <div className="flex gap-1 flex-wrap text-2xl">
         {techStack.map((name) => getIconByName(name))}
