@@ -1,8 +1,9 @@
 "use client";
 
-import axios from "axios";
+import { controlToast } from "@/utils/functions";
 import { useRef, useState } from "react";
-import { ToastContainer, toast, Id } from "react-toastify";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Contact = () => {
@@ -13,37 +14,30 @@ const Contact = () => {
     text: "",
   });
 
+  const toastId = useRef(null);
+
   const sendMessage = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSubmitting(true);
-    const toastId = toast.loading("Sending your message", {
-      position: toast.POSITION.BOTTOM_LEFT,
-    });
-    const currentTime = new Date();
-    axios
-      .post("api/send-message", {
-        senderName: message.senderName,
-        senderEmail: message.senderEmail,
-        message: message.text,
-        sentAt: currentTime.toDateString(),
+    controlToast("Sending your message", toastId, "loading", true);
+
+    fetch("api/sendmessage", {
+      method: "POST",
+      body: JSON.stringify({
+        data: {
+          senderName: message.senderName,
+          senderEmail: message.senderEmail,
+          message: message.text,
+          sentAt: Date.now(),
+        },
+      }),
+    })
+      .then((res) => {
+        if (res.ok) {
+          controlToast("Message succesfully sent", toastId, "success");
+        }
       })
-      .then((res) =>
-        toast.update(toastId, {
-          render: "Message successfully sent",
-          type: "success",
-          isLoading: false,
-          autoClose: 3000,
-        })
-      )
-      .catch((error) => {
-        console.log(error);
-        toast.update(toastId, {
-          render: "Failed to send message, please email me directly",
-          type: "error",
-          isLoading: false,
-          autoClose: 3000,
-        });
-      })
+      .catch((error) => controlToast(error.message, toastId, "error"))
       .finally(() => {
         setMessage({
           senderName: "",
@@ -110,7 +104,14 @@ const Contact = () => {
           disabled={submitting}
           className="bg-blue-400 rounded-full font-bold text-white hover:bg-gray-100 hover:text-blue-400 border-2 border-transparent hover:border-blue-400 px-2 py-0.5 self-end transition-all"
         >
-          {submitting ? "Send..." : "Send"}
+          {submitting ? (
+            <span className="flex gap-1">
+              Sending
+              <AiOutlineLoading3Quarters className="animate-spin mt-1" />
+            </span>
+          ) : (
+            "Send"
+          )}
         </button>
       </form>
       <ToastContainer />

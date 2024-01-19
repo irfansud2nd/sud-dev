@@ -6,6 +6,7 @@ import {
 } from "react-icons/bi";
 import { SiNextdotjs } from "react-icons/si";
 import { AiFillHtml5 } from "react-icons/ai";
+import { IoLogoFirebase } from "react-icons/io5";
 
 const TechStack = () => {
   return (
@@ -19,12 +20,14 @@ const TechStack = () => {
           <BiLogoReact className="text-blue-500" />
           <SiNextdotjs className="text-black" />
           <BiLogoTailwindCss className="text-blue-500" />
+          <IoLogoFirebase className="text-yellow-400" />
           <AiFillHtml5 className="text-orange-600" />
           <BiLogoCss3 className="text-blue-700" />
           <BiLogoJavascript className="text-yellow-500" />
           <BiLogoReact className="text-blue-500" />
           <SiNextdotjs className="text-black" />
           <BiLogoTailwindCss className="text-blue-500" />
+          <IoLogoFirebase className="text-yellow-400" />
         </div>
       </div>
     </div>

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import ProjectCard from "./ProjectCard";
 
 const Projects = () => {
@@ -10,6 +11,54 @@ const Projects = () => {
       <h1 className="text-4xl font-bold text-center mb-3">My Projects</h1>
       <div className="flex flex-1 flex-wrap justify-center items-center gap-3 ">
         <ProjectCard
+          heading="Kejurnas ASBD 2023"
+          desc={
+            <span>
+              The website is designed to facilitate participant registration for
+              the Kejuaraan Nasional{" "}
+              <Link
+                href={"https://silatalazhar.com/"}
+                className="text-blue-500"
+                target="_blank"
+              >
+                ASBD
+              </Link>{" "}
+              2023. It has been used by around 1300 people. This is my second
+              paid website. This website was only given one week to be created,
+              but its better than the PORTUE one.
+            </span>
+          }
+          webm="/previews/asbd-preview.webm"
+          mp4="/previews/asbd-preview.mp4"
+          techStack={["next", "firebase", "tailwind"]}
+          visitUrl="https://kejurnas-asbd-2023.vercel.app/"
+          repoUrl="https://github.com/irfansud2nd/kejurnas-asbd-2023"
+        />
+        <ProjectCard
+          heading="PORTUE 2023"
+          desc={
+            <span>
+              PORTUE 2023 is a website designed to facilitate participant
+              registration for the{" "}
+              <Link
+                href={"https://portue.koni-kotabandung.or.id/"}
+                className="text-blue-500"
+                target="_blank"
+              >
+                PORTUE Silat Bandung Championship 2023
+              </Link>
+              . It has been used by around 1700 people. This is my first paid
+              website. I acknowledge that this website is far from perfect, due
+              to the very limited development time of just one week.
+            </span>
+          }
+          webm="/previews/portue-preview.webm"
+          mp4="/previews/portue-preview.mp4"
+          techStack={["next", "firebase", "tailwind"]}
+          visitUrl="https://portue-silat-championship.vercel.app"
+          repoUrl="https://github.com/irfansud2nd/portue-championship"
+        />
+        <ProjectCard
           heading="Custom Kit"
           desc={
             <span>
@@ -17,16 +66,21 @@ const Projects = () => {
               appearance for your motorcycle without the need to modify its
               chassis. This way, you can easily restore your motorcycle to its
               original form. The design is inspired by{" "}
-              <a href="https://eat-curious.com" className="text-blue-500">
+              <Link
+                href="https://eat-curious.com"
+                className="text-blue-500"
+                target="_blank"
+              >
                 eat-curious.com
-              </a>
+              </Link>
               , and the image assets are from{" "}
-              <a
+              <Link
                 href="https://instagram.com/custom.kit"
+                target="_blank"
                 className="text-blue-500"
               >
                 Custom Kit by Katros
-              </a>
+              </Link>
               .
             </span>
           }
@@ -42,12 +96,13 @@ const Projects = () => {
             <span>
               Sudgym is a website that provides information about body exercises
               based on muscle targets or equipment. I followed a tutorial from{" "}
-              <a
+              <Link
                 href="https://www.youtube.com/@javascriptmastery"
+                target="_blank"
                 className="text-blue-500"
               >
                 Javascript Mastery
-              </a>
+              </Link>
               , but I used a different tech stack, which is Typescript and
               Tailwind.
             </span>

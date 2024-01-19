@@ -1,7 +1,9 @@
+import { countMonth } from "@/utils/functions";
 import Image from "next/image";
 import Link from "next/link";
 import { IoIosDocument } from "react-icons/io";
 import { PiCertificateFill } from "react-icons/pi";
+import DownloadCv from "./DownloadCv";
 
 const About = () => {
   return (
@@ -31,18 +33,21 @@ const About = () => {
             I am a logical and systematic thinker, which makes programming
             enjoyable for me. I work well in a team, and I would be thrilled if
             you could give me the opportunity to apply my self-taught knowledge
-            of approximately 5 months and learn more about web development at a
-            professional level through full-time work or projects., Check my CV
-            and certificates down below.
+            of approximately {countMonth()} months and learn more about web
+            development at a professional level through full-time work or
+            projects. I have 4 months of work experience, developing 2
+            full-stack websites for the registration of a championship. Check my
+            CV and certificates down below.
           </p>
           <div className="flex flex-wrap gap-1 mt-2">
-            <Link
+            {/* <Link
               href="https://drive.google.com/drive/folders/1SDu6Cju5EmaDH2-3PVTREhr3aPhDUDOT?usp=sharing"
               target="_blank"
               className="font-bold whitespace-nowrap items-center px-2 pt-1 pb-0.5 bg-gray-50 rounded-full"
             >
               <IoIosDocument className="text-lg inline-block mb-1" /> CV
-            </Link>
+            </Link> */}
+            <DownloadCv />
             <Link
               href="https://www.freecodecamp.org/certification/fcc9ff89252-49db-4f88-b62c-99edbc088d36/responsive-web-design"
               target="_blank"

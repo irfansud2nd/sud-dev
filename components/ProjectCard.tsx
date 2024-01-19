@@ -9,13 +9,23 @@ import {
 import { TbApi } from "react-icons/tb";
 import { SiNextdotjs } from "react-icons/si";
 import { AiFillHtml5 } from "react-icons/ai";
+import { IoLogoFirebase } from "react-icons/io5";
 
 type ProjectCardProps = {
   heading: string;
   desc: string | JSX.Element;
   webm: string;
   mp4: string;
-  techStack: string[];
+  techStack: (
+    | "html"
+    | "css"
+    | "js"
+    | "react"
+    | "tailwind"
+    | "next"
+    | "api"
+    | "firebase"
+  )[];
   visitUrl: string;
   repoUrl: string;
 };
@@ -58,6 +68,10 @@ const ProjectCard = ({
       name: "api",
       icon: <TbApi className="text-black" />,
     },
+    {
+      name: "firebase",
+      icon: <IoLogoFirebase className="text-yellow-400" />,
+    },
   ];
 
   const getIconByName = (name: string) => {
@@ -66,7 +80,7 @@ const ProjectCard = ({
   };
 
   return (
-    <div className="w-[300px] h-[500px] bg-gray-50 border-2 border-gray-400 rounded-md shadow-xl flex flex-col gap-2 items-center px-2 py-3">
+    <div className="w-[310px] h-[510px] bg-gray-50 border-2 border-gray-400 rounded-md shadow-xl flex flex-col gap-2 items-center px-2 py-3">
       <h1 className="whitespace-nowrap font-extrabold text-3xl border-b-2 border-b-slate-500 text-center">
         {heading}
       </h1>
@@ -74,7 +88,14 @@ const ProjectCard = ({
         <source src={webm} />
         <source src={mp4} />
       </video>
-      <p className="flex-1">{desc}</p>
+      <p className="flex-1 text-justify">{desc}</p>
+      <Link
+        href={repoUrl + "#readme"}
+        target="_blank"
+        className="text-blue-500"
+      >
+        Full description on github
+      </Link>
       <div className="flex gap-1 flex-wrap text-2xl">
         {techStack.map((name) => getIconByName(name))}
       </div>
