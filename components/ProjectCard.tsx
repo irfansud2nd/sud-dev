@@ -81,7 +81,7 @@ const ProjectCard = ({
 
   return (
     <div className="w-[310px] h-[510px] bg-gray-50 border-2 border-gray-400 rounded-md shadow-xl flex flex-col gap-2 items-center px-2 py-3">
-      <h1 className="whitespace-nowrap font-extrabold text-3xl border-b-2 border-b-slate-500 text-center">
+      <h1 className="whitespace-nowrap font-extrabold text-2xl border-b-2 border-b-slate-500 text-center">
         {heading}
       </h1>
       <video autoPlay loop muted playsInline>
