@@ -4,6 +4,10 @@
 
 Sud Dev is a personal website owned by me, containing information about myself, portfolio projects, CV, certificates, as well as contact details to reach me.
 
+## How to use
+
+- Live web [here](https://sud-dev.vercel.app)
+
 ## Features
 
 - Functional contact form
