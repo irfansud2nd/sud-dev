@@ -1,10 +1,12 @@
 "use client";
 
-import { controlToast } from "@/utils/functions";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import Toast from "./ui/Toast";
+import { toast } from "sonner";
+import axios from "axios";
+import { Input } from "./ui/input";
+import { Textarea } from "./ui/textarea";
 
 const Contact = () => {
   const [submitting, setSubmitting] = useState(false);
@@ -14,36 +16,43 @@ const Contact = () => {
     text: "",
   });
 
-  const toastId = useRef(null);
-
   const sendMessage = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitting(true);
-    controlToast("Sending your message", toastId, "loading", true);
 
-    fetch("api/sendmessage", {
-      method: "POST",
-      body: JSON.stringify({
-        data: {
-          senderName: message.senderName,
-          senderEmail: message.senderEmail,
-          message: message.text,
-          sentAt: Date.now(),
-        },
-      }),
-    })
-      .then((res) => {
-        if (res.ok) {
-          controlToast("Message succesfully sent", toastId, "success");
-        }
+    const { senderName, senderEmail, text } = message;
+
+    if (!senderName || !senderEmail || !text) {
+      toast.error("Please fill the empty Input");
+      return;
+    }
+
+    setSubmitting(true);
+    const toastId = toast.loading("Sending your message");
+
+    axios
+      .post("/api/sendmessage", {
+        senderName: senderName,
+        senderEmail: senderEmail,
+        message: text,
+        sentAt: Date.now(),
       })
-      .catch((error) => controlToast(error.message, toastId, "error"))
-      .finally(() => {
+      .then((res) => {
         setMessage({
           senderName: "",
           senderEmail: "",
           text: "",
         });
+        toast.success("Message succesfully sent", { id: toastId });
+      })
+      .catch((error) => {
+        toast.error(
+          `${error.response.data.message} | ${error.response.data.code}`,
+          {
+            id: toastId,
+          }
+        );
+      })
+      .finally(() => {
         setSubmitting(false);
       });
   };
@@ -64,12 +73,12 @@ const Contact = () => {
         </p>
         <div className="flex flex-col w-full gap-1">
           <label className="font-semibold">Name</label>
-          <input
+          <Input
             className="border-2 border-gray-400 focus:outline-none px-2"
             type="text"
             value={message.senderName}
             onChange={(e) =>
-              setMessage({ ...message, senderName: e.target.value })
+              setMessage((prev) => ({ ...prev, senderName: e.target.value }))
             }
             placeholder="Your name..."
             required
@@ -77,12 +86,12 @@ const Contact = () => {
         </div>
         <div className="flex flex-col w-full gap-0.5">
           <label className="font-semibold">Email</label>
-          <input
+          <Input
             className="border-2 border-gray-400 focus:outline-none px-2"
             type="email"
             value={message.senderEmail}
             onChange={(e) =>
-              setMessage({ ...message, senderEmail: e.target.value })
+              setMessage((prev) => ({ ...prev, senderEmail: e.target.value }))
             }
             placeholder="Your email..."
             required
@@ -90,10 +99,12 @@ const Contact = () => {
         </div>
         <div className="flex flex-col w-full gap-0.5">
           <label className="font-semibold">Message</label>
-          <textarea
-            className="border-2 border-gray-400 focus:outline-none px-2"
+          <Textarea
+            className="border-2 border-gray-400 focus:outline-none px-2 resize-none"
             value={message.text}
-            onChange={(e) => setMessage({ ...message, text: e.target.value })}
+            onChange={(e) =>
+              setMessage((prev) => ({ ...prev, text: e.target.value }))
+            }
             placeholder="Your message..."
             rows={5}
             required
@@ -114,7 +125,7 @@ const Contact = () => {
           )}
         </button>
       </form>
-      <ToastContainer />
+      <Toast />
     </div>
   );
 };

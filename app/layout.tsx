@@ -1,14 +1,24 @@
-import Navbar from "@/components/Navbar";
 import "./globals.css";
 import type { Metadata } from "next";
+import { Poppins } from "next/font/google";
+
+import { GeistSans } from "geist/font/sans";
+import { ThemeProvider } from "@/components/navbar/ThemeProvider";
 
 export const metadata: Metadata = {
   title: "Irfan Sudarsana | Frontend Developer",
   description: "A self-taught frontend developer",
   verification: {
-    google: "8YCdhAFEwZNg_NAMj5Eym4TFvzc1HRZnsueiQnZ0JpM",
+    google: process.env.GOOGLE_VERIFICATION,
   },
 };
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-poppins",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
 
 export default function RootLayout({
   children,
@@ -17,7 +27,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="font-poppins text-gray-800 bg-gray-50">{children}</body>
+      <body className={GeistSans.className}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
