@@ -60,11 +60,6 @@ const TechIcon = ({
       element: <IoLogoFirebase className={`${className} text-yellow-400`} />,
     },
     {
-      name: "firebase",
-      tooltip: "Firebase",
-      element: <IoLogoFirebase className={`${className} text-yellow-400`} />,
-    },
-    {
       name: "api",
       tooltip: "API",
       element: <TbApi className={className} />,
