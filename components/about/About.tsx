@@ -2,7 +2,6 @@ import { countMonth } from "@/utils/functions";
 import Image from "next/image";
 import Link from "next/link";
 import { PiCertificateFill } from "react-icons/pi";
-import DownloadCv from "./DownloadCv";
 import {
   Card,
   CardContent,
@@ -12,6 +11,7 @@ import {
   CardTitle,
 } from "../ui/card";
 import { Button } from "../ui/button";
+import { IoIosDocument } from "react-icons/io";
 
 const About = () => {
   return (
@@ -53,7 +53,14 @@ const About = () => {
             </p>
           </CardContent>
           <CardFooter className="flex flex-wrap gap-1 mt-2">
-            <DownloadCv />
+            <Button variant={"outline"} size={"sm"} className="rounded-xl">
+              <Link
+                href="https://firebasestorage.googleapis.com/v0/b/sud-dev-e350e.appspot.com/o/CV%202.0.pdf?alt=media&token=6227e1a7-9cf5-452a-bd9a-9f187a042c06"
+                target="_blank"
+              >
+                <IoIosDocument className="text-lg inline-block mb-1" /> CV
+              </Link>
+            </Button>
             <Button variant={"outline"} size={"sm"} className="rounded-xl">
               <Link
                 href="https://www.freecodecamp.org/certification/fcc9ff89252-49db-4f88-b62c-99edbc088d36/responsive-web-design"
