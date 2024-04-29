@@ -5,6 +5,7 @@ import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 import { FaLocationDot } from "react-icons/fa6";
 import TechStack from "./TechStack";
 import { countMonth } from "@/utils/functions";
+import { workExperienceLength } from "@/utils/constants";
 
 const Home = () => {
   return (
@@ -28,7 +29,7 @@ const Home = () => {
           <br />
           {countMonth()} Months of Learning
           <br />
-          4 Months of Work Experience
+          {workExperienceLength} Months of Work Experience
           <br className="mb-1" />
           <span className="inline-block mr-2">
             <FaLocationDot />

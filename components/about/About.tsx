@@ -12,6 +12,7 @@ import {
 } from "../ui/card";
 import { Button } from "../ui/button";
 import { IoIosDocument } from "react-icons/io";
+import { workExperienceLength } from "@/utils/constants";
 
 const About = () => {
   return (
@@ -47,9 +48,9 @@ const About = () => {
               be thrilled if you could give me the opportunity to apply my
               self-taught knowledge of approximately {countMonth()} months and
               learn more about web development at a professional level through
-              full-time work or projects. I have 4 months of work experience,
-              developing 3 full-stack websites for the registration of a
-              championship.
+              full-time work or projects. I have {workExperienceLength} months
+              of work experience, developing 3 full-stack websites for the
+              registration of a championship.
             </p>
           </CardContent>
           <CardFooter className="flex flex-wrap gap-1 mt-2">
