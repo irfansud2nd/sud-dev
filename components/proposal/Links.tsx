@@ -1,5 +1,6 @@
 import { projects } from "@/utils/constants";
 import { Button } from "../ui/button";
+import { toast } from "sonner";
 
 const Links = () => {
   const linkButtons = [
@@ -21,7 +22,13 @@ const Links = () => {
       flex gap-3"
       >
         {linkButtons.map((button) => (
-          <Button onClick={() => navigator.clipboard.writeText(button.link)}>
+          <Button
+            onClick={() =>
+              navigator.clipboard
+                .writeText(button.link)
+                .then(() => toast.success("Copied"))
+            }
+          >
             {button.label}
           </Button>
         ))}
@@ -37,13 +44,21 @@ const Links = () => {
               {project.title}
             </p>
             <Button
-              onClick={() => navigator.clipboard.writeText(project.visitUrl)}
+              onClick={() =>
+                navigator.clipboard
+                  .writeText(project.visitUrl)
+                  .then(() => toast.success("Copied"))
+              }
               className="w-full"
             >
               Live Web
             </Button>
             <Button
-              onClick={() => navigator.clipboard.writeText(project.repoUrl)}
+              onClick={() =>
+                navigator.clipboard
+                  .writeText(project.repoUrl)
+                  .then(() => toast.success("Copied"))
+              }
               className="w-full"
             >
               Repo

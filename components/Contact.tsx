@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
-import Toast from "./ui/Toast";
 import { toast } from "sonner";
 import axios from "axios";
 import { Input } from "./ui/input";
@@ -125,7 +124,6 @@ const Contact = () => {
           )}
         </button>
       </form>
-      <Toast />
     </div>
   );
 };

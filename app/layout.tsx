@@ -4,6 +4,7 @@ import { Poppins } from "next/font/google";
 
 import { GeistSans } from "geist/font/sans";
 import { ThemeProvider } from "@/components/navbar/ThemeProvider";
+import Toast from "@/components/ui/Toast";
 
 export const metadata: Metadata = {
   title: "Irfan Sudarsana | Frontend Developer",
@@ -30,6 +31,7 @@ export default function RootLayout({
       <body className={GeistSans.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
+          <Toast />
         </ThemeProvider>
       </body>
     </html>
