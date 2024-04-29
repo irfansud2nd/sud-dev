@@ -66,10 +66,12 @@ const TechIcon = ({
     },
   ];
 
+  const exceptions = ["api"];
+
   if (tech == "all") {
     const techNames = techs
       .map((item) => item.name)
-      .filter((item) => item !== "api");
+      .filter((item) => !exceptions.includes(item));
     return (
       <>
         {techNames.map((name) => (

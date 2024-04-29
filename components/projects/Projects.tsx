@@ -14,11 +14,11 @@ const Projects = () => {
             silat championsip and jaipong competition of La Dwitra 2024, an
             event organized by{" "}
             <Link
-              href={"https://smplabsupicibiru.com/"}
+              href={"https://smalabsupicibiru.sch.id/"}
               className="text-blue-500"
               target="_blank"
             >
-              SMP Labschool UPI Cibiru.
+              SMA Labschool UPI Cibiru.
             </Link>{" "}
           </span>
           <span>
@@ -29,7 +29,7 @@ const Projects = () => {
           </span>
         </div>
       ),
-      techStack: ["next", "firebase", "tailwind"],
+      techStack: ["next", "firebase", "tailwind", "api"],
       visitUrl: "https://ladwitra.vercel.app/",
       repoUrl: "https://github.com/irfansud2nd/ladwitra-2024",
       commercial: true,

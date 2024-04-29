@@ -55,7 +55,7 @@ const About = () => {
           <CardFooter className="flex flex-wrap gap-1 mt-2">
             <Button variant={"outline"} size={"sm"} className="rounded-xl">
               <Link
-                href="https://firebasestorage.googleapis.com/v0/b/sud-dev-e350e.appspot.com/o/CV%202.0.pdf?alt=media&token=6227e1a7-9cf5-452a-bd9a-9f187a042c06"
+                href="https://firebasestorage.googleapis.com/v0/b/sud-dev-e350e.appspot.com/o/CV%202.0.pdf?alt=media&token=51b04d0f-578b-44e4-82ab-8da132baa092"
                 target="_blank"
               >
                 <IoIosDocument className="text-lg inline-block mb-1" /> CV
