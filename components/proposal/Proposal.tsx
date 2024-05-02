@@ -19,7 +19,7 @@ export type Proposal = {
 
 const Proposal = () => {
   const defaultQuestions = [
-    "Who will be handling the deployment process? If me, is there any additional payment to rent the website domain?",
+    "Who will be handling the deployment process? If me, would you provide additional budget to rent the website domain?",
     "Do you have specific design for the mobile view?",
     "What kind of back-end do you use?",
     "Is it allowed to build the website using front-end framework? If yes do you have specific framework you preferred?",
