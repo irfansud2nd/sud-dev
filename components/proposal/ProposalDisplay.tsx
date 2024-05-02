@@ -36,9 +36,11 @@ const ProposalDisplay = ({ proposal }: { proposal: Proposal }) => {
           </span>
         ) : null}
       </p>
-      <ol className="list-decimal list-inside">
-        {questions.active.map((question) => (
-          <li>{question}</li>
+      <ol className="font-bold">
+        {questions.active.map((question, i) => (
+          <li key={question}>
+            {i + 1}. {question}
+          </li>
         ))}
       </ol>
       <p>
