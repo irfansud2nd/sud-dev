@@ -24,6 +24,7 @@ const Proposal = () => {
     "What kind of back-end do you use?",
     "Is it allowed to build the website using front-end framework? If yes do you have specific framework you preferred?",
     "How many months is the minimum work period you prefer?",
+    "Is it allowed to use CSS or UI Framework? if yes, what framework you preferred?",
   ];
 
   const initialValue: Proposal = {
