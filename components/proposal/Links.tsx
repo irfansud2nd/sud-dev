@@ -12,6 +12,10 @@ const Links = () => {
       label: "Personal Website",
       link: "https://sud-dev.vercel.app",
     },
+    {
+      label: "LinkedIn",
+      link: "https://www.linkedin.com/in/irfansudp",
+    },
   ];
   return (
     <div className="p-2 border-2 mt-2">
