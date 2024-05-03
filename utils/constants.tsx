@@ -78,7 +78,7 @@ export const projects: ProjectCardProps[] = [
         <br />
         <span>Accommodating 2312 data consisting of:</span>
         <ul className="list-inside list-disc">
-          <li>157 Kontingens</li>
+          <li>157 Contingents</li>
           <li>1772 Athletes</li>
           <li>433 Officials</li>
         </ul>
@@ -116,7 +116,7 @@ export const projects: ProjectCardProps[] = [
         <br />
         <span>Accommodating 1776 data consisting of:</span>
         <ul className="list-inside list-disc">
-          <li>101 Kontingens</li>
+          <li>101 Contingents</li>
           <li>1511 Athletes</li>
           <li>164 Officials</li>
         </ul>
