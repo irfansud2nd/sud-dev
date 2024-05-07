@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "Irfan Sudarsana | Frontend Developer",
   description: "A self-taught frontend developer",
   verification: {
-    google: process.env.GOOGLE_VERIFICATION,
+    google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION,
   },
 };
 
