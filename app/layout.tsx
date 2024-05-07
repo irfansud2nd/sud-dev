@@ -9,9 +9,6 @@ import Toast from "@/components/ui/Toast";
 export const metadata: Metadata = {
   title: "Irfan Sudarsana | Frontend Developer",
   description: "A self-taught frontend developer",
-  verification: {
-    google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION,
-  },
 };
 
 const poppins = Poppins({
