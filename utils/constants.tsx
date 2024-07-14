@@ -33,7 +33,7 @@ export const projects: ProjectCardProps[] = [
       <div>
         <span>
           The business website for{" "}
-          <b>"Ikatan Pencak Silat Indonesia (IPSI) Kota Bandung"</b>. This will
+          <b>Ikatan Pencak Silat Indonesia (IPSI) Kota Bandung</b>. This will
           facilitate championship registrations, manage the attendance of
           athletes trained by IPSI Kota Bandung, and manage news and events to
           be shared.
