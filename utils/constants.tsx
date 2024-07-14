@@ -9,6 +9,7 @@ export type TechNames =
   | "tailwind"
   | "firebase"
   | "api"
+  | "supabase"
   | "all";
 
 export type ProjectCardProps = {
@@ -17,13 +18,36 @@ export type ProjectCardProps = {
   desc: string | JSX.Element;
   techStack: TechNames[];
   visitUrl: string;
-  repoUrl: string;
+  repoUrl?: string;
   commercial?: boolean;
 };
 
 export const workExperienceLength = 6;
 
 export const projects: ProjectCardProps[] = [
+  {
+    id: "ipsi-bandung",
+    title: "IPSI Kota Bandung",
+    desc: (
+      <div>
+        <span>
+          The business website for{" "}
+          <b>"Ikatan Pencak Silat Indonesia (IPSI) Kota Bandung"</b>. This will
+          facilitate championship registrations, manage the attendance of
+          athletes trained by IPSI Kota Bandung, and manage news and events to
+          be shared.
+        </span>
+        <span>
+          I think this website is the best from all projects that i have done.
+          Currently, this website is still being developed in several parts
+          according to the client's wishes.
+        </span>
+      </div>
+    ),
+    techStack: ["next", "supabase", "firebase", "tailwind"],
+    visitUrl: "https://ipsikotabandung.com",
+    commercial: true,
+  },
   {
     id: "ladwitra-2024",
     title: "La Dwitra 2024",
@@ -41,6 +65,20 @@ export const projects: ProjectCardProps[] = [
             SMA Labschool UPI Cibiru.
           </Link>{" "}
         </span>
+        <br />
+        <span>51 Users</span>
+        <br />
+        <span>3 Admins</span>
+        <br />
+        <span>Accommodating 247 data consisting of:</span>
+        <ul className="list-inside list-disc">
+          <li>35 Contingents</li>
+          <li>125 Athletes</li>
+          <li>30 Officials</li>
+          <li>16 Dance Studios</li>
+          <li>36 Dancers</li>
+          <li>5 Choreographers</li>
+        </ul>
         <span>
           I think this website is way more better than my last 2 similiar
           projects, i learned a lot of new things in the depelopment process. It

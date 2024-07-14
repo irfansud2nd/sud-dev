@@ -10,7 +10,7 @@ const Projects = () => {
       data-section
     >
       <h1 className="text-4xl font-bold text-center mb-3">My Projects</h1>
-      <div className="flex flex-1 flex-wrap justify-center items-center gap-3 ">
+      <div className="flex flex-1 flex-wrap justify-center items-stretch gap-3 ">
         {projects.map((project) => (
           <ProjectCard {...project} key={project.title} />
         ))}

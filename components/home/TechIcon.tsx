@@ -15,6 +15,7 @@ import {
 } from "../ui/tooltip";
 import { TbApi } from "react-icons/tb";
 import { TechNames } from "@/utils/constants";
+import { RiSupabaseFill } from "react-icons/ri";
 
 const TechIcon = ({
   tech,
@@ -63,6 +64,11 @@ const TechIcon = ({
       name: "api",
       tooltip: "API",
       element: <TbApi className={className} />,
+    },
+    {
+      name: "supabase",
+      tooltip: "Supabase",
+      element: <RiSupabaseFill className={`${className} text-[#3BBC82]`} />,
     },
   ];
 

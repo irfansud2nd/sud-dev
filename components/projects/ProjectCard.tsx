@@ -24,7 +24,7 @@ const ProjectCard = ({
   commercial,
 }: ProjectCardProps) => {
   return (
-    <Card className="bg-secondary h-[720px] w-[310px] grid grid-rows-[auto_1fr_auto] relative">
+    <Card className="bg-secondary  w-[310px] grid grid-rows-[auto_1fr_auto] relative">
       <ProjectBadge
         type={commercial ? "commercial" : "personal"}
         className="absolute right-2 top-2"
@@ -71,8 +71,8 @@ const ProjectCard = ({
                 Visit
               </Link>
             </Button>
-            <Button size="sm" variant={"outline"}>
-              <Link href={repoUrl} target="_blank">
+            <Button size="sm" variant={"outline"} disabled={!repoUrl}>
+              <Link href={repoUrl ?? ""} target="_blank">
                 Repo
               </Link>
             </Button>
