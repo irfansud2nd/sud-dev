@@ -60,10 +60,11 @@ const Links = () => {
             <Button
               onClick={() =>
                 navigator.clipboard
-                  .writeText(project.repoUrl)
+                  .writeText(project.repoUrl ?? "")
                   .then(() => toast.success("Copied"))
               }
               className="w-full"
+              disabled={!project.repoUrl}
             >
               Repo
             </Button>
