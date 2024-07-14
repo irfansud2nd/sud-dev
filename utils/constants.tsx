@@ -7,6 +7,7 @@ export type TechNames =
   | "react"
   | "next"
   | "tailwind"
+  | "shadcn"
   | "firebase"
   | "api"
   | "supabase"
@@ -44,7 +45,7 @@ export const projects: ProjectCardProps[] = [
         </span>
       </div>
     ),
-    techStack: ["next", "supabase", "firebase", "tailwind"],
+    techStack: ["next", "supabase", "firebase", "shadcn", "tailwind"],
     visitUrl: "https://ipsikotabandung.com",
     commercial: true,
   },
@@ -87,7 +88,7 @@ export const projects: ProjectCardProps[] = [
         </span>
       </div>
     ),
-    techStack: ["next", "firebase", "tailwind", "api"],
+    techStack: ["next", "firebase", "shadcn", "tailwind", "api"],
     visitUrl: "https://ladwitra.vercel.app/",
     repoUrl: "https://github.com/irfansud2nd/ladwitra-2024",
     commercial: true,

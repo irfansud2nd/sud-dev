@@ -16,6 +16,7 @@ import {
 import { TbApi } from "react-icons/tb";
 import { TechNames } from "@/utils/constants";
 import { RiSupabaseFill } from "react-icons/ri";
+import { SiShadcnui } from "react-icons/si";
 
 const TechIcon = ({
   tech,
@@ -51,6 +52,15 @@ const TechIcon = ({
       element: <SiNextdotjs className={className} />,
     },
     {
+      name: "shadcn",
+      tooltip: "Shadcn UI",
+      element: (
+        <SiShadcnui
+          className={`${className} text-white bg-black rounded-full p-2`}
+        />
+      ),
+    },
+    {
       name: "tailwind",
       tooltip: "Tailwind CSS",
       element: <BiLogoTailwindCss className={`${className} text-blue-500`} />,
@@ -61,14 +71,14 @@ const TechIcon = ({
       element: <IoLogoFirebase className={`${className} text-yellow-400`} />,
     },
     {
-      name: "api",
-      tooltip: "API",
-      element: <TbApi className={className} />,
-    },
-    {
       name: "supabase",
       tooltip: "Supabase",
       element: <RiSupabaseFill className={`${className} text-[#3BBC82]`} />,
+    },
+    {
+      name: "api",
+      tooltip: "API",
+      element: <TbApi className={className} />,
     },
   ];
 
