@@ -47,6 +47,7 @@ export const projects: ProjectCardProps[] = [
     ),
     techStack: ["next", "supabase", "firebase", "shadcn", "tailwind"],
     visitUrl: "https://ipsikotabandung.com",
+    repoUrl: "https://github.com/irfansud2nd/ipsi-kota-bandung",
     commercial: true,
   },
   {
