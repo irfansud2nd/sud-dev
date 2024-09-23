@@ -1,4 +1,3 @@
-import { countMonth } from "@/utils/functions";
 import Image from "next/image";
 import Link from "next/link";
 import { PiCertificateFill } from "react-icons/pi";
@@ -46,9 +45,9 @@ const About = () => {
               occupation. I am a logical and systematic thinker, which makes
               programming enjoyable for me. I work well in a team, and I would
               be thrilled if you could give me the opportunity to apply my
-              self-taught knowledge of approximately {countMonth()} months and
-              learn more about web development at a professional level through
-              full-time work or projects. I have {workExperienceLength} months
+              self-taught knowledge of approximately 1 year and learn more about
+              web development at a professional level through full-time work or
+              projects. I have {workExperienceLength}
               of work experience, developing 3 full-stack websites for the
               registration of a championship.
             </p>

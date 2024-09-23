@@ -4,7 +4,6 @@ import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 
 import { FaLocationDot } from "react-icons/fa6";
 import TechStack from "./TechStack";
-import { countMonth } from "@/utils/functions";
 import { workExperienceLength } from "@/utils/constants";
 
 const Home = () => {
@@ -27,9 +26,9 @@ const Home = () => {
         <p>
           Hi, I am Irfan Sudarsana, a self-taught Frontend Developer.
           <br />
-          {countMonth()} Months of Learning
+          1 Year of Learning
           <br />
-          {workExperienceLength} Months of Work Experience
+          {workExperienceLength} of Work Experience
           <br className="mb-1" />
           <span className="inline-block mr-2">
             <FaLocationDot />

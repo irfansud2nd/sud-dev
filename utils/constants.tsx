@@ -23,7 +23,7 @@ export type ProjectCardProps = {
   commercial?: boolean;
 };
 
-export const workExperienceLength = 8;
+export const workExperienceLength = "1 Year";
 
 export const projects: ProjectCardProps[] = [
   {
