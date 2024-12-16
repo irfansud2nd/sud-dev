@@ -7,8 +7,8 @@ import { ThemeProvider } from "@/components/navbar/ThemeProvider";
 import Toast from "@/components/ui/Toast";
 
 export const metadata: Metadata = {
-  title: "Irfan Sudarsana | Frontend Developer",
-  description: "A self-taught frontend developer",
+  title: "Irfan Sudarsana | Web Developer",
+  description: "A self-taught web developer",
 };
 
 const poppins = Poppins({

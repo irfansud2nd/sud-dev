@@ -14,7 +14,7 @@ const Home = () => {
       data-section
     >
       <div className="flex-1 flex flex-col lg:gap-5 max-lg:mt-20">
-        <h1 className="font-extrabold text-5xl">Frontend Developer</h1>
+        <h1 className="font-extrabold text-5xl">Web Developer</h1>
         <Image
           className="lg:hidden object-cover object-top rounded-full size-52 mx-auto my-3"
           src="/images/profile.jpg"
@@ -24,9 +24,7 @@ const Home = () => {
           quality={100}
         />
         <p>
-          Hi, I am Irfan Sudarsana, a self-taught Frontend Developer.
-          <br />
-          1 Year of Learning
+          Hi, I am Irfan Sudarsana, a self-taught Web Developer.
           <br />
           {workExperienceLength} of Work Experience
           <br className="mb-1" />

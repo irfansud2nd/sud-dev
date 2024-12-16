@@ -11,7 +11,7 @@ import {
 } from "../ui/card";
 import { Button } from "../ui/button";
 import { IoIosDocument } from "react-icons/io";
-import { workExperienceLength } from "@/utils/constants";
+import { projectsCount, workExperienceLength } from "@/utils/constants";
 
 const About = () => {
   return (
@@ -33,23 +33,23 @@ const About = () => {
             <CardTitle>About me</CardTitle>
             <CardDescription>
               {" "}
-              I am an automation engineer graduate who aspires to become a
-              frontend developer.
+              I am an automation engineer graduate who aspires to become a web
+              developer.
             </CardDescription>
           </CardHeader>
           <CardContent>
             <p className="text-justify">
-              I would like to pursue a career as a frontend developer due to its
+              I would like to pursue a career as a web developer due to its
               flexibility. It is a job that allows me to work from anywhere, and
               it offers a more even job market compared to my previous
               occupation. I am a logical and systematic thinker, which makes
               programming enjoyable for me. I work well in a team, and I would
               be thrilled if you could give me the opportunity to apply my
-              self-taught knowledge of approximately 1 year and learn more about
-              web development at a professional level through full-time work or
-              projects. I have {workExperienceLength}
-              of work experience, developing 3 full-stack websites for the
-              registration of a championship.
+              self-taught knowledge and learn more about web development at a
+              professional level through full-time work or projects. I have{" "}
+              {workExperienceLength}
+              of work experience, developing {projectsCount} full-stack websites
+              for the registration of a championship.
             </p>
           </CardContent>
           <CardFooter className="flex flex-wrap gap-1 mt-2">

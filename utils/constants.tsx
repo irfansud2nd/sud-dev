@@ -25,6 +25,8 @@ export type ProjectCardProps = {
 
 export const workExperienceLength = "1 Year";
 
+export const projectsCount = 4;
+
 export const projects: ProjectCardProps[] = [
   {
     id: "ipsi-bandung",
@@ -40,8 +42,12 @@ export const projects: ProjectCardProps[] = [
         </span>
         <span>
           I think this website is the best from all projects that i have done.
-          Currently, this website is still being developed in several parts
-          according to the client's wishes.
+          So far,{" "}
+          <Link href={"https://ipsikotabandung.com"} className="text-blue-500">
+            ipsikotabandung.com
+          </Link>{" "}
+          has successfully facilitated 1 championship with a total of 1,899
+          athletes, 402 officials, and 212 contingents.
         </span>
       </div>
     ),
