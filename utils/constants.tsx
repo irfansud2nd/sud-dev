@@ -43,7 +43,11 @@ export const projects: ProjectCardProps[] = [
         <span>
           I think this website is the best from all projects that i have done.
           So far,{" "}
-          <Link href={"https://ipsikotabandung.com"} className="text-blue-500">
+          <Link
+            href={"https://ipsikotabandung.com"}
+            className="text-blue-500"
+            target="_blank"
+          >
             ipsikotabandung.com
           </Link>{" "}
           has successfully facilitated 1 championship with a total of 1,899
